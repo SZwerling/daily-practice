@@ -49,23 +49,20 @@ prevSlide.addEventListener("click", function () {
   });
 });
 
-setTimeout(() => {
-  
-}, 2000)
 
-function repeatingFunc() {
-    if (curSlide === maxSlide) {
-        curSlide = 0;
-      } else {
-        curSlide++;
-      }
+// function repeatingFunc() {
+//     if (curSlide === maxSlide) {
+//         curSlide = 0;
+//       } else {
+//         curSlide++;
+//       }
     
-    //   move slide by -100%
-      slides.forEach((slide, indx) => {
-        slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
-      });
+//     //   move slide by -100%
+//       slides.forEach((slide, indx) => {
+//         slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+//       });
     
-    setTimeout(repeatingFunc, 5000);
-}
+//     setTimeout(repeatingFunc, 5000);
+// }
 
-setTimeout(repeatingFunc, 5000);
+// setTimeout(repeatingFunc, 5000);
