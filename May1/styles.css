@@ -10,11 +10,11 @@
 }
 
 .body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content:end;
-  box-sizing: border-box;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: end;
+   box-sizing: border-box;
 }
 
 .navbar {
@@ -22,78 +22,79 @@
    justify-content: flex-start;
    align-items: center;
    padding: 2rem;
-   background-color: #0F4C81;
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   background-color: #0f4c81;
+   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
    font-size: 1.5rem;
 }
 
-
 .navbar__navbar-link {
-    color: aliceblue;
-    text-decoration: none;
-    margin: 0 1rem;
+   color: aliceblue;
+   text-decoration: none;
+   margin: 0 1rem;
 }
 
-.navbar__navbar-link:hover{
-    color: black;
+.navbar__navbar-link:hover {
+   color: black;
 }
 
 .navbar__logo {
-    width: 2.7rem;
-    height: 2.7rem;
+   width: 2.7rem;
+   height: 2.7rem;
 }
 
-
 .slider {
-    width: 100%;
-    max-width: 600px;
-    height: 350px;
-    position: relative;
-    overflow: hidden;  /* <===  */
-  }
+   margin: 5px;
+   height: 70vh;
+   width: 100vw;
+   position: relative;
+   overflow: hidden; /* <===  */
+}
 
 .slide {
-    width: 100%;
-    /* max-width: 600px;
+   width: 100%;
+   /* max-width: 600px;
     height: 350px; */
-    position: absolute;
+   position: absolute;
 }
 
 .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
 }
 
 .btn {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    border: none;
-    border-radius: 50%;
-    z-index: 10px;
-    cursor: pointer;
-    background-color: #fff;
-    font-size: 18px;
-  }
-  
-  .btn:active {
-    transform: scale(1.1);
-  }
-  
-  .btn-prev {
-    top: 45%;
-    left: 2%;
-  }
-  
-  .btn-next {
-    top: 45%;
-    right: 2%;
-  }
+   position: absolute;
+   width: 40px;
+   height: 40px;
+   padding: 10px;
+   border: none;
+   border-radius: 50%;
+   /* z-index: 10px; */
+   cursor: pointer;
+   background-color: rgb(24, 121, 232);
+   font-size: 18px;
+}
 
-  .centered {
-    display: flex;
-    justify-content: center;
-  }
+.btn:hover {
+   background-color: whitesmoke;
+}
 
+.btn:active {
+   background-color: white;
+}
+
+.btn-prev {
+   top: 45%;
+   left: 2%;
+}
+
+.btn-next {
+   top: 45%;
+   right: 2%;
+}
+
+.centered {
+   display: flex;
+   justify-content: center;
+}
