@@ -1,0 +1,58 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.app {
+  margin: 10px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.class_counter, .function_counter {
+  font-size: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .function_counter {
+  font-size: 55px;
+} */
+
+
+.btn,
+.btn:link, 
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    margin: 2px 0;
+    display: inline-block; /*so can add padding, width or height but no line break*/
+    border-radius: 100px;
+    transition: all .2s;/*enables animation of all props*/
+    position: relative;
+}
+ 
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+ 
+.btn:active {  /*when clicked*/
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+ 
+
+
+
+
+ 
+
+
