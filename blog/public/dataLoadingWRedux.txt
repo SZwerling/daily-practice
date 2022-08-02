@@ -1,0 +1,17 @@
+General Data Loading With Redux
+________________________________
+
+Component gets rendered onto the screen.                          // Components are generally responsibile for fetching
+Component's 'componentDidMount' lifecycle method gets called.     // data they need by calling an action creator.
+We call action creator from 'componentDidMount'.                  // Very common to put inside componentDidMount,
+
+
+Action creator runs code to make an API request. (Using Axios)    // Action creators are responsible for making API reqs.
+API responds with data.                                           // This is where redux-thunk comes into play.
+Action creator returns an 'action' object with the fetched data on the 'payload' property.
+
+
+Action object gets sent to all the reducers.                       // We get fetched data into a comp by generating new state
+Some reducer sees the action, returns the data off the 'payload'.  // in our redux store, then getting that into the comp through
+Because we generated a new state object, redux/react-redux cause our react app to be rerendered.  // mapStateToProps.
+
