@@ -15,3 +15,11 @@ Action object gets sent to all the reducers.                       // We get fet
 Some reducer sees the action, returns the data off the 'payload'.  // in our redux store, then getting that into the comp through
 Because we generated a new state object, redux/react-redux cause our react app to be rerendered.  // mapStateToProps.
 
+
+
+REDUX THUNK MIDDLEWARE
+________________________________
+
+Gets called whenever and action creator gets dispatched, before it gets to reducers.
+With thunk the action creator can return an object OR A FUNCTION.
+If a function is returned, then thunk calls the function.
