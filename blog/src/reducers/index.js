@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import PostsReducer from "./PostsReducer";
+import postsReducer from "./postsReducer";
 
 
 
 export default combineReducers({
-    posts: PostsReducer
+    posts: postsReducer
 });

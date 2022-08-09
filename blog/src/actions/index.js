@@ -2,7 +2,7 @@ import jsonPlaceholder from "../api/jsonPlaceholder";
 
 export const fetchPosts = () => async (dispatch, getState) => {  //don't neeed getState arg becuase we're not using it
         const response = await jsonPlaceholder.get('/posts');    // using arrow functions to get rid of brackets and return
-        dispatch({ type: 'FETCH_POSTS', payload: response})
+        dispatch({ type: 'FETCH_POSTS', payload: response.data}) // pulling off just the 'data' key/value from response object
     }    
 
 
