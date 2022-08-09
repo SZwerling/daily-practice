@@ -7,11 +7,20 @@ class PostList extends React.Component {
     componentDidMount(){
         this.props.fetchPosts(); //calls fetchPosts from index.js of actions folder
     }
+
+    renderList(){
+        return this.props.posts.map(post => {
+            return(
+                <div key={post.id}>{post.userId}: {post.title}</div>
+            )
+        })
+    }
+
     render(){
         console.log(this.props.posts)
         return(
             <div>
-                Post List
+                {this.renderList()}
             </div>
         )
     }
