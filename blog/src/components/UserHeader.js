@@ -8,7 +8,7 @@ class UserHeader extends React.Component {
    }
 
    render() {
-      const user = this.props.users.find(user => user.id === this.props.userId);
+      const {user } = this.props;
     
       if (!user) {
          return null;
@@ -17,8 +17,15 @@ class UserHeader extends React.Component {
    }
 }
 
-const mapStateToProps = (state) => {
-   return { users: state.users };
+const mapStateToProps = (state, ownProps) => { // see explanation of ownProps below
+   return { user: state.users.find(user => user.id === ownProps.userId) };
 };
 
 export default connect(mapStateToProps, { fetchUser: fetchUser })(UserHeader);
+
+
+//We extracted this logic that was in the render method and put it in mapStateToProps
+//const user = this.props.users.find(user => user.id === this.props.userId)// to give us the one user with the matching id.
+//But this.props.userId is only available in the component and not in mapStateToProps ?? It is!
+//With ownProps we get access to the props passed into the component.
+//The userId props is passed in from the PostList component.
