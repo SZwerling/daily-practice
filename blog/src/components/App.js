@@ -1,9 +1,12 @@
+import '../style/App.css'
 import React from 'react'
 import PostList from './PostList';
 
+
+
 const App = () => {
     return(
-        <div className='container'>
+        <div className='ui container'>
             <PostList />
         </div>
     )
