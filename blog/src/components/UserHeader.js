@@ -1,11 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchUser } from "../actions";
+
 
 class UserHeader extends React.Component {
-   componentDidMount() {
-      this.props.fetchUser(this.props.userId);
-   }
 
    render() {
       const {user } = this.props;
@@ -21,7 +18,7 @@ const mapStateToProps = (state, ownProps) => { // see explanation of ownProps be
    return { user: state.users.find(user => user.id === ownProps.userId) };
 };
 
-export default connect(mapStateToProps, { fetchUser: fetchUser })(UserHeader);
+export default connect(mapStateToProps)(UserHeader);
 
 
 //We extracted this logic that was in the render method and put it in mapStateToProps

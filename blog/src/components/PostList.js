@@ -1,12 +1,12 @@
 import React from 'react';
 import UserHeader from './UserHeader';
 import { connect } from 'react-redux';
-import { fetchPosts } from '../actions';
+import { fetchPostsAndUsers } from '../actions';
 
 class PostList extends React.Component {
 
     componentDidMount(){
-        this.props.fetchPosts(); //calls fetchPosts from index.js of actions folder
+        this.props.fetchPostsAndUsers(); //calls fetchPosts from index.js of actions folder
     }
 
     renderList(){
@@ -41,4 +41,4 @@ const mapStateToProps = (state) => { // in reducers we assigned result from acti
     return { posts: state.posts}     // so it is available as state.posts and we assign it to "posts"
 }                                    // So then available in this comp as this.props.posts
 
-export default connect(mapStateToProps, { fetchPosts : fetchPosts })(PostList);
+export default connect(mapStateToProps, { fetchPostsAndUsers : fetchPostsAndUsers })(PostList);
