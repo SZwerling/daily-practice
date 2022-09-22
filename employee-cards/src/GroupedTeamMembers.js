@@ -1,52 +1,10 @@
 import { useState } from "react";
+import parseTeams from "./parseTeams";
 
 const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
-   const [groupedEmployees, setGroupedData] = useState(groupTeamMembers());
+   const [groupedEmployees, setGroupedData] = useState(parseTeams(employees, selectedTeam));
 
-   function groupTeamMembers() {
-      let teams = [];
 
-      let teamAMembers = employees.filter(
-         (employee) => employee.teamName === "TeamA"
-      );
-      let teamA = {
-         team: "TeamA",
-         members: teamAMembers,
-         collapsed: selectedTeam === "TeamA" ? false : true,
-      };
-      teams.push(teamA);
-
-      let teamBMembers = employees.filter(
-         (employee) => employee.teamName === "TeamB"
-      );
-      let teamB = {
-         team: "TeamB",
-         members: teamBMembers,
-         collapsed: selectedTeam === "TeamB" ? false : true,
-      };
-      teams.push(teamB);
-
-      let teamCMembers = employees.filter(
-         (employee) => employee.teamName === "TeamC"
-      );
-      let teamC = {
-         team: "TeamC",
-         members: teamCMembers,
-         collapsed: selectedTeam === "TeamC" ? false : true,
-      };
-      teams.push(teamC);
-
-      let teamDMembers = employees.filter(
-         (employee) => employee.teamName === "TeamD"
-      );
-      let teamD = {
-         team: "TeamD",
-         members: teamDMembers,
-         collapsed: selectedTeam === "TeamD" ? false : true,
-      };
-      teams.push(teamD);
-      return teams;
-   }
 
    function handleTeamClick(event){
       let transformedGroupData = groupedEmployees.map((groupedData) => groupedData.team === event.currentTarget.id ? {...groupedData, collapsed: !groupedData.collapsed} : groupedData )
