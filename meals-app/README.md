@@ -182,9 +182,10 @@ Lookup a single random meal
 (hint the "https://" is missing)
 setup two variables in context.jsx
 (allMealsUrl, randomMealUrl) and assign the corresponding values
+
+
 Get Meals By Name (with axios)
 Axios
-
 install axios
 import in context.jsx
 refactor fetchData

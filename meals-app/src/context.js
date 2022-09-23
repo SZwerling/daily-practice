@@ -1,27 +1,31 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState,useEffect } from "react";
+import axios from "axios";
 
 const AppContext = React.createContext();
 
-const allMealsUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s='
-const randomMeal = 'https://www.themealdb.com/api/json/v1/1/random.php'
+const allMealsUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=cheesecake";
+const randomMeal = "https://www.themealdb.com/api/json/v1/1/random.php";
 
 const AppProvider = ({ children }) => {
-   const fetchedData = async () => {
+
+   const fetchedMeals = async (url) => {
       try {
-         const response = await fetch(allMealsUrl+'chicken');
-         const data = await response.json();
-         console.log(data.meals);
+         const { data } = await axios.get(url);
+        //  console.log(data);
+         setMeals(data.meals)
       } catch (error) {
-         console.log(error);
+         console.log(error.response);
       }
    };
 
    useEffect(() => {
-      fetchedData();
+      fetchedMeals(allMealsUrl);
    }, []);
 
+   const [ meals, setMeals] = useState([])
+
    return (
-      <AppContext.Provider value={{ name: "John", occupation: "Student" }}>
+      <AppContext.Provider value={{ meals }}>
          {children}
       </AppContext.Provider>
    );
@@ -38,10 +42,6 @@ export { AppContext, AppProvider, useGlobalContext };
 
 // RANDOM MEAL
 // https://www.themealdb.com/api/json/v1/1/random.php
-
-
-
-
 
 // https://www.boredapi.com/api/activity
 
