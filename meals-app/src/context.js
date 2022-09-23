@@ -3,10 +3,18 @@ import React, { useContext, useEffect } from "react";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
+
    useEffect(() => {
-      fetch("http://www.boredapi.com/api/activity/").then((response) =>
-         response.json().then((data) => console.log(data.activity))
-      );
+     const fetchedData = async () => {
+        try{
+            const response = await fetch('http://www.boredapi.com/api/activity/');
+            const data = await response.json()
+            console.log(data.activity)
+        } catch (error) {
+            console.log(error)
+        }
+     }
+     fetchedData()
    }, []);
 
    return (
@@ -23,3 +31,10 @@ const useGlobalContext = () => {
 export { AppContext, AppProvider, useGlobalContext };
 
 // https://www.boredapi.com/api/activity
+
+// USING .THEN
+// useEffect(() => {
+//     fetch("http://www.boredapi.com/api/activity/").then((response) =>
+//        response.json().then((data) => console.log(data.activity))
+//     );
+//  }, []);
