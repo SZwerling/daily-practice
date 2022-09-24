@@ -3,24 +3,29 @@ import { useGlobalContext } from "../context";
 
 const Search = () => {
     const [text, setText] = useState('')
-    console.log('rerender')
-    function handleChange(term){
-        setText(term)
+    const { setSearchTerm } = useGlobalContext();
+    
+    function handleChange(e){
+        setText(e.target.value)
     }
     
 
     function handleSubmit(e){
-        console.log(text)
         e.preventDefault()
+        if(text){
+         setSearchTerm(text)
+        }
+        setText('')   
     }
 
    return (
       <header className="search-container">
          <form className="form" onSubmit={handleSubmit}>
             <label htmlFor="search-input"></label>
-            <input onChange={e => handleChange(e.target.value)}
+            <input onChange={handleChange}
                id="search-input"
                type="text"
+               value={text} //for controlled input // means react state is in charge // one source of truth
                placeholder="type favorite meal"
                className="form-input"
             />

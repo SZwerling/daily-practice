@@ -17,7 +17,7 @@ const Meals = () => {
     if(meals.length < 1){
         return(
             <section className="loading">
-                <h4>Error In Search Term. Pleas Try Again.</h4>
+                <h4>Error In Search Term. Please Try Again.</h4>
             </section>
         )
     }
