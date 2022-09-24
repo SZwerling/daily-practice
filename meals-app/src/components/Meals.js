@@ -3,7 +3,7 @@ import { FaThumbsUp } from "react-icons/fa"
 
 const Meals = () => {
     const { meals, loading } = useGlobalContext()
-   
+   //while waiting for fetchedMeals to return a value
     if(loading){
         return(
             <section className="loading">
@@ -12,6 +12,17 @@ const Meals = () => {
            
         )
     }
+
+    //if returned array is empty
+    if(meals.length < 1){
+        return(
+            <section className="loading">
+                <h4>Error In Search Term. Pleas Try Again.</h4>
+            </section>
+        )
+    }
+
+    //display returned array from fetchedMeals function
     return <section className="section-center">
     {meals.map((meal) => {
        
