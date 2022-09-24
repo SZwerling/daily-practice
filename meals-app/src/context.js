@@ -29,7 +29,7 @@ const AppProvider = ({ children }) => {
    };
 
    useEffect(() => {
-      fetchedMeals(allMealsUrl+searchTerm);
+      fetchedMeals(allMealsUrl+searchTerm.replace(/\s/g, "+"))
      
    }, [searchTerm]);
 
@@ -62,3 +62,5 @@ export { AppContext, AppProvider, useGlobalContext };
 //        response.json().then((data) => console.log(data.activity))
 //     );
 //  }, []);
+
+
