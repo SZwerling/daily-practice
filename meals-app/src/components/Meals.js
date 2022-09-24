@@ -2,11 +2,19 @@ import { useGlobalContext } from "../context";
 import { FaThumbsUp } from "react-icons/fa"
 
 const Meals = () => {
-    const { meals } = useGlobalContext()
-    console.log(meals)
-  
+    const { meals, loading } = useGlobalContext()
+   
+    if(loading){
+        return(
+            <section className="loading">
+                <h4>Loading...</h4>
+            </section>
+           
+        )
+    }
     return <section className="section-center">
     {meals.map((meal) => {
+       
         const {idMeal, strMeal : title, strMealThumb: img } = meal; // colon is for renaming destructured property
         return(
             //change to figure

@@ -40,6 +40,7 @@ html {
   --red-dark: #842029;
   --green-light: #d1e7dd;
   --green-dark: #0f5132;
+  --yellow: #ffef00;
 
   /* fonts  */
   --small-text: 0.875rem;
@@ -166,8 +167,14 @@ ul {
   /* FAVORITES */
 
   /* MEALS */
+  .loading {
+    padding: 3rem 0;
+    width: var(--view-width);
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
   .section-center {
-  
     padding: 3rem 0;
     width: var(--view-width);
     max-width: var(--max-width);
@@ -230,7 +237,7 @@ ul {
   }
 
   .like-btn:hover {
-    color: var(--red-dark);
+    color: var(--yellow);
     transform: translateY(-2px);
     font-size: 1.5rem;
   }
