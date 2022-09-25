@@ -33,9 +33,20 @@ const AppProvider = ({ children }) => {
       setLoading(false)
    };
 
+   // IF WE DON'T WANT A DEFAULT SEARCH TERM WE CAN DO THIS TO LOAD FIRST TIME WHEN NO SEARCH TERM
+   // the api returns even when no search term
    useEffect(() => {
-      fetchedMeals(allMealsUrl+searchTerm.replace(/\s/g, "+"))
-     
+      fetchedMeals(allMealsUrl)
+   }, [])
+
+
+   // NO SEARCH TERM ON RANDOMMEAL, THIS UNINENTIONALLY UPDATES SEARCHTERM STATE RUNNING FETCHED MEALS FUNCTION
+   // THIS SAYS IF NO SEARCH TERM // WHICH THERE ISN'T BECAUSE IT GETS WIPE ON HANDLERANDOM FUNCTION // THEN DON'T CALL FETCHEDMEALS WITH ALLMEALS
+   useEffect(() => {
+      if(!searchTerm){
+         return
+      }
+      fetchedMeals(allMealsUrl+searchTerm.replace(/\s/g, "+"))  
    }, [searchTerm]);
 
 
