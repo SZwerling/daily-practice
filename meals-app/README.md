@@ -588,6 +588,9 @@ const Search = () => {
 
 
 export default Search
+
+
+
 Fetch Random Meal
 context.jsx
 

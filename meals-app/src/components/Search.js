@@ -3,7 +3,7 @@ import { useGlobalContext } from "../context";
 
 const Search = () => {
     const [text, setText] = useState('')
-    const { setSearchTerm } = useGlobalContext();
+    const { setSearchTerm, fetchRandomMeal } = useGlobalContext();
     
     function handleChange(e){
         setText(e.target.value)
@@ -32,7 +32,7 @@ const Search = () => {
             <button type="submit" className="btn">
                search
             </button>
-            <button type="button" className="btn btn-hipster">
+            <button type="button" className="btn btn-hipster" onClick={fetchRandomMeal}>
                suprise me !
             </button>
          </form>
