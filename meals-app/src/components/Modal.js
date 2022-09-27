@@ -2,9 +2,9 @@ import { useGlobalContext } from "../context";
 
 const Modal = () => {
     const { setShowModal, selectedMeal } = useGlobalContext()
-    const handleClose = () => {
-        setShowModal(false)
-    }
+    // const handleClose = () => {
+    //     setShowModal(false)
+    // }
 
     const { strMealThumb : image, strMeal: title, strInstructions: text, strSource: source } = selectedMeal
      
@@ -17,7 +17,7 @@ const Modal = () => {
                     <p>cooking instructions</p>
                     <p>{text}</p>
                     <a href={source} target="_blank">original source</a>
-                    <button className="btn btn-hipster close-btn" onClick={handleClose}>close</button>
+                    <button className="btn btn-hipster close-btn" onClick={() => setShowModal(false)}>close</button>
                 </div>
             </div>
         </aside>

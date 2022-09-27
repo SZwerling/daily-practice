@@ -17,15 +17,10 @@ const AppProvider = ({ children }) => {
 
    const selectMeal = (idMeal, favoriteMeal) => {
       let meal;
-      
-        meal = meals.find((meal) => meal.idMeal === idMeal);
-      
+      meal = meals.find((meal) => meal.idMeal === idMeal);
       setSelectedMeal(meal);
       setShowModal(true)
     }
-
-
-
 
    const fetchRandomMeal = () => {
       fetchedMeals(randomMeal)
