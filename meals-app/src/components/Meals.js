@@ -2,7 +2,7 @@ import { useGlobalContext } from "../context";
 import { FaThumbsUp } from "react-icons/fa"
 
 const Meals = () => {
-    const { meals, loading } = useGlobalContext()
+    const { meals, loading, selectMeal } = useGlobalContext()
    //while waiting for fetchedMeals to return a value
     if(loading){
         return(
@@ -30,7 +30,7 @@ const Meals = () => {
         return(
             //change to figure
             <article key={idMeal} className="single-meal"> 
-                <img src={img} className="img" />
+                <img src={img} className="img" onClick={() => selectMeal(idMeal)}/>
                 <footer>
                     <h5>{title}</h5>
                     <button className="like-btn"><FaThumbsUp /></button>
