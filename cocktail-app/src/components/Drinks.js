@@ -1,5 +1,6 @@
 import { useGlobalContext } from "../context";
 import { Puff } from "react-loading-icons";
+import { Link } from 'react-router-dom'
 
 const Drinks = () => {
    const { cocktails: drinks, loading } = useGlobalContext();
@@ -22,7 +23,7 @@ const Drinks = () => {
    }
 
    return (
-    
+
       <section className="section-drinks">
          {drinks.map((drink) => {
             const {
@@ -32,9 +33,13 @@ const Drinks = () => {
                strIngredient1,
             } = drink;
             return (
+           
                <article key={idDrink} className="drink-card">
                   <figure>
-                     <img className="drink-card-img" src={image} alt={title} />
+                    <Link to={`/${idDrink}`}>
+                    <img className="drink-card-img" src={image} alt={title} />
+                    </Link>
+                    
                   </figure>
                   <figcaption>
                      <span className="span">{title}</span>
@@ -44,6 +49,7 @@ const Drinks = () => {
                   </figcaption>
                   <button className="card-btn">add to favorites</button>
                </article>
+             
             );
          })}
       </section>

@@ -209,3 +209,34 @@ body {
   display: grid;
   place-content: center;
 }
+
+/* || FAVORITE */
+.favorite-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+   background: black;
+   color: white;
+}
+
+.favorite-container img {
+  width: 80vh;
+}
+
+.ingredient-span {
+  padding: 1ch;
+}
+
+.favorite-content {
+  
+  max-width: 40%;
+}
+
+.favorite-content .btn {
+  background: white;
+  color: black;
+  padding: .5em;
+  border-radius: var(--borderRadius);
+}

@@ -1,17 +1,17 @@
-import Drinks from "./components/Drinks";
+import Home from "./components/Home";
 import FavoritePage from "./components/FavoritePage";
-import Favorites from "./components/Favorites";
-import Search from "./components/Search";
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 function App() {
    return (
-      <main>
-         <Search />
-         <Drinks />
-         <FavoritePage />
-         <Favorites />
-      </main>
+      <Router>
+         <Routes>
+            <Route path="/" element={<Home/>}></Route>
+            <Route path="/:drinkId" element={<FavoritePage/>}></Route>
+         </Routes>
+      </Router>
    );
 }
 

@@ -4,7 +4,7 @@ import axios from 'axios'
 const AppContext = React.createContext()  // returns provider and consumer
 const allDrinksUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
 const randomDrinkUrl ='https://www.thecocktaildb.com/api/json/v1/1/random.php'
-const byIngredientUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka'
+
 
 
 
