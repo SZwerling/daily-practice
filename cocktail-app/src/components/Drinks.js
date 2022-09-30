@@ -3,7 +3,7 @@ import { Puff } from "react-loading-icons";
 import { Link } from 'react-router-dom'
 
 const Drinks = () => {
-   const { cocktails: drinks, loading } = useGlobalContext();
+   const { cocktails: drinks, loading, addToCollection } = useGlobalContext();
 
    if (loading) {
       return (
@@ -36,7 +36,7 @@ const Drinks = () => {
            
                <article key={idDrink} className="drink-card">
                   <figure>
-                    <Link to={`/${idDrink}`}>
+                    <Link to={`/special/${idDrink}`}>
                     <img className="drink-card-img" src={image} alt={title} />
                     </Link>
                     
@@ -47,7 +47,7 @@ const Drinks = () => {
                         Main Ingredient: {strIngredient1}
                      </span>
                   </figcaption>
-                  <button className="card-btn">add to favorites</button>
+                  <button onClick={() => addToCollection(idDrink)} className="card-btn">add to favorites</button>
                </article>
              
             );

@@ -13,6 +13,20 @@ const AppProvider = ({ children }) => {
     const [ cocktails, setCocktails ] = useState([])
     const [ loading, setLoading ] = useState(false)
     const [ searchTerm, setSearchTerm ] = useState('')
+    const [ collection, setCollection ] = useState([])
+
+   
+    const addToCollection = (idDrink) => {
+        const drink = cocktails.find((drink) => drink.idDrink === idDrink);
+        const alreadyFavorite = collection.find((drink) => drink.idDrink === idDrink);
+        if (alreadyFavorite) return
+        const updatedFavorites = [...collection, drink]
+        setCollection(updatedFavorites)
+      }
+      const removeFromCollection = (idDrink) => {
+        const updatedFavorites = collection.filter((drink) => drink.idDrink !== idDrink);
+        setCollection(updatedFavorites)
+      }
 
     const fetchDrinks = async (url) => {
         setLoading(true)
@@ -45,7 +59,7 @@ const AppProvider = ({ children }) => {
     }, [searchTerm])
 
     return(
-        <AppContext.Provider value={{ cocktails, loading, setSearchTerm, fetchRandomDrink }}> 
+        <AppContext.Provider value={{ cocktails, loading, setSearchTerm, fetchRandomDrink, addToCollection, collection, removeFromCollection }}> 
             {children}
         </AppContext.Provider> 
     )

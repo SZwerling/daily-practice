@@ -3,9 +3,11 @@ import { useGlobalContext } from "../context";
 
 const FavoritePage = () => {
    const { drinkId } = useParams();
+
    const { cocktails: drinks } = useGlobalContext();
 
    const specialDrink = drinks.filter((drink) => drink.idDrink === drinkId)[0];
+   
 
    const ingredients = [];
    for (let el in specialDrink) {

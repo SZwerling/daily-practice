@@ -129,6 +129,45 @@ body {
  
 }
 
+/* || COLLECTION */
+.collection{
+  background:var(--black);
+  color:var(--white);
+  padding:1rem 0;
+}
+
+.collection-content{
+  width: var(--view-width);
+  max-width: var(--max-width);
+  margin:0 auto;
+}
+.collection-container{
+  display:flex;
+  gap:0.5rem;
+  flex-wrap:wrap;
+}
+.collection-item{
+  text-align:center;
+}
+.collection-img{
+  width:60px;
+  border-radius:50%;
+  border:5px solid var(--white);
+  cursor:pointer;
+}
+.collection-item button{
+  margin-top:0.25rem;
+  background: transparent;
+  color:var(--white);
+  border: transparent;
+  cursor:pointer;
+  transition:var(--transition);
+  font-size:0.5rem;
+}
+.colleciton-item button:hover{
+  color: black;
+}
+
  /* || DRINKS */
  .section-drinks {
   padding: 3rem 0;
@@ -212,31 +251,54 @@ body {
 
 /* || FAVORITE */
 .favorite-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+  background-color: var(--grey-900);
+  color: var(--white);
   height: 100vh;
-   background: black;
-   color: white;
-}
-
-.favorite-container img {
-  width: 80vh;
-}
-
-.ingredient-span {
-  padding: 1ch;
 }
 
 .favorite-content {
-  
-  max-width: 40%;
+  padding: 1rem;
+  flex-grow: 1;
 }
 
 .favorite-content .btn {
-  background: white;
-  color: black;
-  padding: .5em;
+  font-size: var(--small-text);
+  padding: var(--extra-small-text);
   border-radius: var(--borderRadius);
 }
+
+@media screen and (min-width: 1015px) {
+  .favorite-container {
+    background-color: var(--grey-900);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+  }
+
+  .favorite-container img {
+    border-radius: 2px solid var(--red-dark);
+    background: black;
+    width: 80vh;
+  }
+  
+  .ingredient-span {
+    padding: 1ch;
+  }
+  
+  .favorite-content {
+    max-width: 40%;
+  } 
+   
+  .favorite-content .btn {
+    background: white;
+    color: black;
+    padding: .5em;
+    border-radius: var(--borderRadius);
+  }
+  
+  
+}
+
+

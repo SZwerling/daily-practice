@@ -1,12 +1,13 @@
-import Favorites from "./Favorites";
+import Collection from "./Collection";
 import Search from "./Search";
 import Drinks from "./Drinks";
+
 
 const Home = () => {
    return (
       <main>
          <Search />
-         <Favorites />
+         <Collection />
          <Drinks />
       </main>
    );
