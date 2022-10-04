@@ -1,12 +1,36 @@
 import { Link, useParams } from "react-router-dom";
 import { useGlobalContext } from "../context";
 
+
 const FavoritePage = () => {
    const { drinkId } = useParams();
+   
+   const { cocktails: drinks, collection } =  useGlobalContext();
+   const saveDrinks = (drinks) => {
+      localStorage.setItem("drinks", JSON.stringify(drinks));
+   };
+   if(drinks.length > 0){
+      saveDrinks(drinks)
+   }
+   
 
-   const { cocktails: drinks } = useGlobalContext();
+   const getDrinks = () => {
+      const drinksJson = localStorage.getItem("drinks");
+   // try/catch allows program to keep going if not JSON data or some error
+      try {
+         return drinksJson ? JSON.parse(drinksJson) : []
+      } catch(e) {
+         return []
+      }
+      
+   };
 
-   const specialDrink = drinks.filter((drink) => drink.idDrink === drinkId)[0];
+   const allDrinks = getDrinks()
+
+   
+   
+
+   const specialDrink = allDrinks.filter((drink) => drink.idDrink === drinkId)[0] || collection.filter((drink) => drink.idDrink === drinkId)[0];
    
 
    const ingredients = [];

@@ -21,10 +21,12 @@ const AppProvider = ({ children }) => {
         const alreadyFavorite = collection.find((drink) => drink.idDrink === idDrink);
         if (alreadyFavorite) return
         const updatedFavorites = [...collection, drink]
+        localStorage.setItem('collection', JSON.stringify(updatedFavorites))
         setCollection(updatedFavorites)
       }
       const removeFromCollection = (idDrink) => {
         const updatedFavorites = collection.filter((drink) => drink.idDrink !== idDrink);
+        localStorage.setItem('collection', JSON.stringify(updatedFavorites))
         setCollection(updatedFavorites)
       }
 

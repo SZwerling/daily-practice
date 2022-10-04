@@ -47,7 +47,7 @@ const Drinks = () => {
                         Main Ingredient: {strIngredient1}
                      </span>
                   </figcaption>
-                  <button onClick={() => addToCollection(idDrink)} className="card-btn">add to favorites</button>
+                  <button onClick={() => addToCollection(idDrink)} className="card-btn">add to collection</button>
                </article>
              
             );

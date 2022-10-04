@@ -2,7 +2,11 @@ import { useGlobalContext } from "../context";
 import { Link } from "react-router-dom";
 
 const Collection = () => {
-   const { collection, removeFromCollection } = useGlobalContext();
+   let { removeFromCollection } = useGlobalContext();
+
+   let collectionJson = localStorage.getItem('collection')
+   let collection = JSON.parse(collectionJson)
+   
 
    return (
       <section className="collection">
@@ -23,7 +27,7 @@ const Collection = () => {
                         </Link>
 
                         <button
-                           classaName="remove-btn"
+                           className="remove-btn"
                            onClick={() => removeFromCollection(idDrink)}
                         >
                            remove

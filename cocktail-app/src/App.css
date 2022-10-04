@@ -156,14 +156,15 @@ body {
   cursor:pointer;
 }
 .collection-item button{
-  margin-top:0.25rem;
+  margin-top: 0.25rem;
   background: transparent;
   color:var(--white);
   border: transparent;
   cursor:pointer;
   transition:var(--transition);
-  font-size:0.5rem;
+  font-size: .7em;
 }
+
 .colleciton-item button:hover{
   color: black;
 }
