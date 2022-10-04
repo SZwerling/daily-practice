@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
    return (
-      <main>
+      <main className="container">
          <BrowserRouter>
             <Routes>
                <Route path="/" element={<StockOverviewPage />} />
@@ -18,4 +18,4 @@ function App() {
 
 export default App;
 
-// finhub api: cctrcu2ad3i78dc6rt50cctrcu2ad3i78dc6rt5g
+
