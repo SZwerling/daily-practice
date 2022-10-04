@@ -37,7 +37,38 @@ const StockList = () => {
    }, []);
 
 
-   return <div>stock list</div>;
+   return <div>
+        <table className="table hover mt-5">
+            <thead style={{color: "rgb(79, 89, 102)"}}>
+                <tr>
+                    <th scope="col">name</th>
+                    <th scope="col">last</th>
+                    <th scope="col">chg</th>
+                    <th scope="col">chg%</th>
+                    <th scope="col">high</th>
+                    <th scope="col">low</th>
+                    <th scope="col">open</th>
+                    <th scope="col">close</th>
+                </tr>
+            </thead>
+            <tbody>
+                {stock.map((stockData) => {
+                    return (
+                        <tr className="table-row" key={stockData.symbol}>
+                            <th>{stockData.symbol}</th>
+                            <td>{stockData.data.c}</td>
+                            <td>{stockData.data.d}</td>
+                            <td>{stockData.data.dp}</td>
+                            <td>{stockData.data.h}</td>
+                            <td>{stockData.data.l}</td>
+                            <td>{stockData.data.o}</td>
+                            <td>{stockData.data.pc}</td>
+                        </tr>
+                    )
+                })}
+            </tbody>
+        </table>
+   </div>;
 };
 
 export default StockList;
