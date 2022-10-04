@@ -1,29 +1,43 @@
-import { useState, useEffect } from 'react';
-import finnHub from '../apis/finnHub';
-
+import { useState, useEffect } from "react";
+import finnHub from "../apis/finnHub";
 
 const StockList = () => {
-    const [watchList, setWatchList] = useState(["GOOGL", "MSFT", "AMZ"])
-    const token = process.env.REACT_APP_TOKEN
+   const [stock, setStock] = useState([]);
+   const [watchList, setWatchList] = useState(["GOOGL", "MSFT", "AMZN"]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await finnHub.get("/quote?symbol=AAPL&token=" + token)
-                console.log(response)
-            } catch (error) {
+   useEffect(() => {
+      let isMounted = true;
+      const fetchData = async () => {
+         try {
+            const responses = await Promise.all(
+               watchList.map((stock) => {
+                  return finnHub.get("/quote", {
+                     params: {
+                        symbol: stock,
+                     },
+                  });
+               })
+            );
 
+            console.log(responses);
+            const data = responses.map((response) => {
+                return {
+                    data: response.data,
+                    symbol: response.config.params.symbol
+                }
+            })
+            console.log(data)
+            if (isMounted) {
+               setStock(data);
             }
-        }
-        fetchData()
-    }, [])
+         } catch (error) {}
+      };
+      fetchData();
+      return () => (isMounted = false);
+   }, []);
 
-    return(
-        <div>stock list</div>
-    )
-}
+
+   return <div>stock list</div>;
+};
 
 export default StockList;
-
-
-
