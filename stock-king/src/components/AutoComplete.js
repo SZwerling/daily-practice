@@ -26,7 +26,7 @@ const AutoComplete = () => {
                   <li onClick={() => {
                     addStock(item.symbol)
                     setSearch('')
-                  }} className="dropdown-item" key={item.displaySymbol}>
+                  }} className="dropdown-item" key={item.symbol}>
                      {item.description} ({item.symbol})
                   </li>
                );
