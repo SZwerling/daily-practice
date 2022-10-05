@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import finnHub from "../apis/finnHub";
-import { BsFillCaretDownFill, BsFillCaretUpFill } from "react-icons/bs";
+import { BsFillCaretDownFill, BsFillCaretUpFill, BsSearch } from "react-icons/bs";
 
 const StockList = () => {
    const [stock, setStock] = useState([]);
@@ -27,20 +27,20 @@ const StockList = () => {
                   });
                })
             );
-
-            console.log(responses);
+            
             const data = responses.map((response) => {
                 return {
                     data: response.data,
                     symbol: response.config.params.symbol
                 }
             })
-            console.log(data)
+        
             if (isMounted) {
                setStock(data);
             }
          } catch (error) {}
       };
+     
       fetchData();
       return () => (isMounted = false);
    }, []);
