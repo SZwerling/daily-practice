@@ -1,10 +1,11 @@
 import finnHub from "../apis/finnHub";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 
 
 const StockDetailPage = () => {
     const { symbol } = useParams()
+    const [chartData, setCharData] = useState()
 
     useEffect(() => {
         const fetchData = async() => {
@@ -45,7 +46,12 @@ const StockDetailPage = () => {
                     }
                 })  
             ])
-                    console.log(responses)         
+                    console.log(responses)   
+                    setCharData({
+                        day: formatData(),
+                        week: formatData(),
+                        year: formatData()
+                    })      
         }
         fetchData()
     }, [])
