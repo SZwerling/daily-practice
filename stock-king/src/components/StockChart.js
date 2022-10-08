@@ -5,7 +5,12 @@ const StockChart = ({ chartData, symbol }) => {
    const { day, week, year } = chartData;
    const [dateFormat, setDateFormat] = useState(day);
 
+   const color = dateFormat[dateFormat.length-1].y - dateFormat[0].y > 0 ? "#26C281" : "#ed3419"
+
+   console.log(color)
+
    const options = {
+      colors: [color],
       title: {
          text: symbol,
          align: "center",
