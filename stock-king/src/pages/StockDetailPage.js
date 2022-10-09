@@ -71,7 +71,7 @@ const StockDetailPage = () => {
    return (
       <div>
          {chartData && (
-            <div>
+            <div className="container">
                <StockChart chartData={chartData} symbol={symbol} />
                <StockData symbol={symbol} />
             </div>

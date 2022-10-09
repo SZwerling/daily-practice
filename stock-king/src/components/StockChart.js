@@ -1,5 +1,5 @@
 import Chart from "react-apexcharts";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const StockChart = ({ chartData, symbol }) => {
    const { day, week, year } = chartData;
@@ -49,9 +49,11 @@ const StockChart = ({ chartData, symbol }) => {
     if(button === dateFormat){
         return classes + "btn-primary"
     } else {
-        return classes + "btn-outpline-primary"
+        return classes + "btn-outline-primary"
     }
    }
+
+   
 
    return (
       <div className="mt-5 p-4 shadow-sm bg-white">

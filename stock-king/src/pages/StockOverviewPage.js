@@ -3,7 +3,7 @@ import StockList from "../components/StockList";
 
 const StockOverviewPage = () => {
     return(
-        <div>stock overview page
+        <div className="container">
             <AutoComplete />
             <StockList />
         </div>
