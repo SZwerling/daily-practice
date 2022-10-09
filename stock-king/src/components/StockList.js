@@ -6,11 +6,11 @@ import {
    BsFillCaretUpFill,
    BsSearch,
 } from "react-icons/bs";
-import { WatchListContext } from "../context/watchListContext";
+import { WatchListContext, deleteStock } from "../context/watchListContext";
 
 const StockList = () => {
    const [stock, setStock] = useState([]);
-   const { watchList } = useContext(WatchListContext);
+   const { watchList, deleteStock } = useContext(WatchListContext);
    const navigate = useNavigate();
 
    const changeColor = (num) => {
@@ -95,7 +95,18 @@ const StockList = () => {
                         <td>{stockData.data.h}</td>
                         <td>{stockData.data.l}</td>
                         <td>{stockData.data.o}</td>
-                        <td>{stockData.data.pc}<button className="btn btn-danger btn-sm ml-3 d-inline-block delete-button">delete</button></td>
+                        <td>
+                           {stockData.data.pc}
+                           <button
+                              className="btn btn-danger btn-sm ml-3 d-inline-block delete-button"
+                              onClick={(e) => {
+                                 e.stopPropagation()
+                                 deleteStock(stockData.symbol);
+                              }}
+                           >
+                              delete
+                           </button>
+                        </td>
                      </tr>
                   );
                })}

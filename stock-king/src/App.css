@@ -4,6 +4,8 @@
     right: 9rem;
 }
 
+
+/* when table row is hovered, select delete button */
 .table-row:hover .delete-button {
     visibility: visible;
 }
