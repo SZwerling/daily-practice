@@ -1,0 +1,9 @@
+.delete-button {
+    visibility: hidden;
+    position: absolute;
+    right: 9rem;
+}
+
+.table-row:hover .delete-button {
+    visibility: visible;
+}
