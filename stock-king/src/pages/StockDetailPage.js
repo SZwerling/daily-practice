@@ -2,6 +2,7 @@ import finnHub from "../apis/finnHub";
 import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import StockChart from "../components/StockChart";
+import StockData from "../components/StockData";
 
 const formatData = (data) => {
    return data.t.map((el, index) => {
@@ -72,6 +73,7 @@ const StockDetailPage = () => {
          {chartData && (
             <div>
                <StockChart chartData={chartData} symbol={symbol} />
+               <StockData symbol={symbol} />
             </div>
          )}
       </div>
