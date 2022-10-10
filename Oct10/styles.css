@@ -77,6 +77,10 @@ a:link, a:visited {
         transform: translateY(-8px) rotate(-410deg);
     }
 
+    .bar {
+        background: dodgerblue;
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -84,6 +88,7 @@ a:link, a:visited {
         gap: 0;
         flex-direction: column;
         background: #262626;
+        
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -96,6 +101,9 @@ a:link, a:visited {
       .nav-menu.active {
         left: 0;
       }
+      a:link, a:visited {
+        color: gold;
+    }
   }
 
   
