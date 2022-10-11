@@ -88,6 +88,147 @@
                </tbody>
             </table>
          </section>
+         <hr />
+         <article>
+            <h2>Contact Me</h2>
+            <p>I'd really like to hear from you.</p>
+            <form action="https://httpbin.org/get" method="get" id="bigForm">
+               <fieldset>
+                  <legend>personal info</legend>
+                  <div class="firstName">
+                     <label for="firstName">first name:</label>
+                     <input
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        placeholder="first name"
+                        autocomplete="off"
+                        required
+                        autofocus
+                     />
+                  </div>
+                  <div class="lastName">
+                     <label for="lastName">last name:</label>
+                     <input
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        placeholder="last name"
+                        autocomplete="off"
+                        required
+                     />
+                  </div>
+                  <div class="password">
+                     <label for="password">Password</label>
+                     <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="password"
+                        required
+                     />
+                  </div>
+                  <div class="phone">
+                     <label for="phone">Phone</label>
+                     <input
+                        type="tel"
+                        name="phone"
+                        id="phone"
+                        placeholder="3235555555"
+                     />
+                  </div>
+                  <div class="coffee">
+                     <label for="coffee">Favorite Coffee</label>
+                     <select name="coffee" id="coffee">
+                        <optgroup label="group one">
+                           <option value="regular">regular coffee</option>
+                           <option value="iced">iced coffee</option>
+                        </optgroup>
+                        <optgroup label="group two">
+                           <option value="latte">latte</option>
+                           <option value="cappuccino">cappuccino</option>
+                           <option value="other">other</option>
+                        </optgroup>
+                     </select>
+                  </div>
+                  <div class="feet">
+                     <label for="feet">Favorite Feet</label>
+                     <input
+                        type="text"
+                        name="feet"
+                        id="feet"
+                        list="feet-list"
+                     />
+                     <datalist id="feet-list">
+                        <option value="hairy">hairy</option>
+                        <option value="rough">rough</option>
+                        <option value="flat">flat</option>
+                        <option value="stinky">stinky</option>
+                     </datalist>
+                  </div>
+               </fieldset>
+               <br />
+               <fieldset>
+                  <legend>what is your favorite nightmare?</legend>
+                  <div class="radio">
+                     <p>
+                        <input
+                           type="radio"
+                           name="nightmare"
+                           id="basic"
+                           value="basic"
+                        />
+                        <label for="basic">Basic</label>
+                     </p>
+                     <p>
+                        <input
+                           type="radio"
+                           name="nightmare"
+                           id="falling"
+                           value="falling"
+                        />
+                        <label for="falling">Falling</label>
+                     </p>
+                     <p>
+                        <input
+                           type="radio"
+                           name="nightmare"
+                           id="chased"
+                           value="chased"
+                        />
+                        <label for="chased">Chased</label>
+                     </p>
+                  </div>
+                  <br>
+                  <fieldset>
+                     <legend>Do you have ghosts?</legend>
+                     <p class="residual">
+                        <input type="checkbox" name="ghosts" id="residual">
+                        <label for="residual">residual energy</label>
+                     </p>
+                     <p class="poltergeist">
+                        <input type="checkbox" name="ghosts" id="poltergeist">
+                        <label for="poltergeist">poltergeist</label>
+                     </p>
+                     <p class="residual">
+                        <input type="checkbox" name="demonic" id="demonic">
+                        <label for="demonic">demonic</label>
+                     </p>
+                    
+                  </fieldset>
+               </fieldset>
+               <br>
+               <fieldset>
+                  <legend>Leave a Note</legend>
+                  <label for="message">Message</label>
+                  <br>
+                  <textarea name="message" id="message" cols="30" rows="10" placeholder="message here"></textarea>
+               </fieldset>
+               <br>
+               <button type="submit">submit</button>
+               <button type="rest">reset</button>
+            </form>
+         </article>
       </main>
       <script src="./script.js"></script>
    </body>

@@ -1,13 +1,11 @@
 import Chart from "react-apexcharts";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const StockChart = ({ chartData, symbol }) => {
    const { day, week, year } = chartData;
    const [dateFormat, setDateFormat] = useState(day);
 
    const color = dateFormat[dateFormat.length-1].y - dateFormat[0].y > 0 ? "#26C281" : "#ed3419"
-
-   console.log(color)
 
    const options = {
       colors: [color],
@@ -56,8 +54,8 @@ const StockChart = ({ chartData, symbol }) => {
    
 
    return (
-      <div className="mt-5 p-4 shadow-sm bg-white">
-         <Chart options={options} series={series} type="area" width="100%" />
+      <div className="mt-5 shadow-sm bg-white">
+         <Chart options={options} series={series} type="area" height="450"  />
          <div>
             <button className={renderButtonSelect(day)} onClick={() => setDateFormat(day)}>24hr</button>
             <button className={renderButtonSelect(week)} onClick={() => setDateFormat(week)}>7d</button>

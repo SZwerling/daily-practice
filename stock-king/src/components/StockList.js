@@ -4,7 +4,6 @@ import finnHub from "../apis/finnHub";
 import {
    BsFillCaretDownFill,
    BsFillCaretUpFill,
-   BsSearch,
 } from "react-icons/bs";
 import { WatchListContext, deleteStock } from "../context/watchListContext";
 

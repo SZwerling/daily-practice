@@ -13,7 +13,7 @@ const StockData = ({ symbol }) => {
                   symbol,
                },
             });
-            console.log(response);
+            
             setCompanyInfo(response.data);
          } catch (error) {
             console.log(error);
@@ -28,8 +28,8 @@ const StockData = ({ symbol }) => {
    return (
       <div>
          {companyInfo && (
-            <div className="row border bg-white rounded shadow-sm p-4 mt-5">
-               <div className="col">
+            <div className="row border bg-white rounded shadow-sm p-4 mt-5 mb-3">
+               <div className="col-sm">
                   <div>
                      <span className="fw-bold">Name: </span>
                      {companyInfo.name}
@@ -43,7 +43,7 @@ const StockData = ({ symbol }) => {
                      {companyInfo.ticker}
                   </div>
                </div>
-               <div className="col">
+               <div className="col-sm">
                   <div>
                      <span className="fw-bold">Exchange: </span>
                      {companyInfo.exchange}
@@ -57,7 +57,7 @@ const StockData = ({ symbol }) => {
                      {companyInfo.ipo}
                   </div>
                </div>
-               <div className="col">
+               <div className="col-sm">
                   <div>
                      <span className="fw-bold">Market Cap: </span>
                      {companyInfo.marketCapitalization}
