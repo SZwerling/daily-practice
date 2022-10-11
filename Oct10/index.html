@@ -1,35 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Collapsible</title>
-</head>
-<body>
-    <header>
-        <nav class="navbar">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="styles.css" />
+      <title>Collapsible</title>
+   </head>
+   <body>
+      <header>
+         <nav class="navbar">
             <a class="nav-branding" href="#">DEV</a>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+               </li>
             </ul>
             <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+               <span class="bar"></span>
+               <span class="bar"></span>
+               <span class="bar"></span>
             </div>
-           
-        </nav>
-    </header>
-    <script src="./script.js"></script>
-</body>
+         </nav>
+      </header>
+      <main>
+         <h1>Today Is The First Day</h1>
+         <section>
+            <table>
+               <caption>
+                  my daily schedule
+               </caption>
+               <thead>
+                  <tr>
+                     <th>&nbsp;</th>
+                     <th>Time</th>
+                     \
+                     <th>Activity</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <th>Morning</th>
+                     <td>
+                        <time datetime="08:00">8am</time>-<time datetime="11:00"
+                           >11am</time
+                        >
+                     </td>
+
+                     <td>write code</td>
+                  </tr>
+                  <tr>
+                     <th>Break</th>
+                     <td>
+                        <time datetime="11:00">11am</time>-<time
+                           datetime="12:00"
+                           >12pm</time
+                        >
+                     </td>
+
+                     <td>eat lunch</td>
+                  </tr>
+                  <tr>
+                     <th>Afternoon</th>
+                     <td>
+                        <time datetime="12:00">12am</time>-<time
+                           datetime="17:00"
+                           >5pm</time
+                        >
+                     </td>
+
+                     <td>study coursework</td>
+                  </tr>
+                  <tr>
+                     <th rowspan="2">Night</th>
+                     <td rowspan="2">all other times</td>
+                     <td>eat</td>
+                  </tr>
+                  <tr>
+                     <td>sleep</td>
+                  </tr>
+               </tbody>
+            </table>
+         </section>
+      </main>
+      <script src="./script.js"></script>
+   </body>
 </html>

@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     background: #262626;
 }
@@ -22,6 +27,7 @@ a:link, a:visited {
 
 .navbar {
     min-height: 70px;
+    max-height: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -96,14 +102,29 @@ a:link, a:visited {
     
       .nav-item {
         margin: 16px 0;
+        width: 100%;
       }
 
       .nav-menu.active {
         left: 0;
       }
+      
       a:link, a:visited {
         color: gold;
     }
   }
 
+table, tr, td, caption {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: .5rem;
+}
+
+table {
+    width: 60%;
+}
+
+caption {
+    width: 100%;
+}
   
