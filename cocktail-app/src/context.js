@@ -13,7 +13,8 @@ const AppProvider = ({ children }) => {
     const [ cocktails, setCocktails ] = useState([])
     const [ loading, setLoading ] = useState(false)
     const [ searchTerm, setSearchTerm ] = useState('')
-    const [ collection, setCollection ] = useState([])
+    const [ collection, setCollection ] = useState(JSON.parse(localStorage.getItem("collection")) || []);
+    // const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || []);
 
    
     const addToCollection = (idDrink) => {
