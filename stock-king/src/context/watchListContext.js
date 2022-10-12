@@ -7,7 +7,7 @@ export const WatchListContextProvider = (props) => {
       localStorage.getItem("watchList")?.split(",") || ["GOOGL", "MSFT"]
    );
 
-   console.log(watchList);
+   
 
    useEffect(() => {
       localStorage.setItem("watchList", watchList);

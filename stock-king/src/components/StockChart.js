@@ -51,10 +51,12 @@ const StockChart = ({ chartData, symbol }) => {
     }
    }
 
+  
    
-
+  
    return (
-      <div className="mt-5 shadow-sm bg-white">
+      
+      <div className="mt-3 shadow-sm bg-white">
          <Chart options={options} series={series} type="area" height="450"  />
          <div>
             <button className={renderButtonSelect(day)} onClick={() => setDateFormat(day)}>24hr</button>
@@ -63,6 +65,7 @@ const StockChart = ({ chartData, symbol }) => {
          </div>
       </div>
    );
+  
 };
 
 export default StockChart;

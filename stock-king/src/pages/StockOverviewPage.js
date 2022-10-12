@@ -1,5 +1,5 @@
 import AutoComplete from "../components/AutoComplete";
-import StockList from "../components/StockList";
+import { StockList } from "../components/StockList";
 
 const StockOverviewPage = () => {
     return(

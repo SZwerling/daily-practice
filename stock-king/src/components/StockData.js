@@ -28,7 +28,7 @@ const StockData = ({ symbol }) => {
    return (
       <div>
          {companyInfo && (
-            <div className="row border bg-white rounded shadow-sm p-4 mt-5 mb-3">
+            <div className="row border bg-white rounded shadow-sm p-4 mt-5 mb-2">
                <div className="col-sm">
                   <div>
                      <span className="fw-bold">Name: </span>
