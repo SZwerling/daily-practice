@@ -3,7 +3,7 @@ import { Puff } from "react-loading-icons";
 import { Link } from 'react-router-dom'
 
 const Drinks = () => {
-   const { cocktails: drinks, loading, addToCollection } = useGlobalContext();
+   const { cocktails: drinks, loading, addToCollection, fetchDrinks } = useGlobalContext();
 
    if (loading) {
       return (
@@ -32,6 +32,11 @@ const Drinks = () => {
                strDrink: title,
                strIngredient1,
             } = drink;
+
+           const handleBack = () => {
+               fetchDrinks('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=')
+            }
+
             return (
            
                <article key={idDrink} className="drink-card">
@@ -48,6 +53,9 @@ const Drinks = () => {
                      </span>
                   </figcaption>
                   <button onClick={() => addToCollection(idDrink)} className="card-btn">add to collection</button>
+                  {drinks.length === 1 && 
+                  <button onClick={() => handleBack()}  className="rando">back</button>
+         }
                </article>
              
             );
