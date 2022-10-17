@@ -8,9 +8,7 @@ const formatData = (data) => {
    return data.t.map((el, index) => {
       return {
          x: el * 1000,
-         // y: Math.floor(data.c[index]),
          y: Math.round((data.c[index] + Number.EPSILON) * 100) /100
-         // var rounded = Math.round((n + Number.EPSILON) * 100) / 100;
       };
    });
 };
@@ -46,7 +44,7 @@ const StockDetailPage = () => {
                   symbol,
                   from: oneWeek,
                   to: currentTime,
-                  resolution: "D",
+                  resolution: 60,
                },
             }),
             finnHub.get("/stock/candle", {

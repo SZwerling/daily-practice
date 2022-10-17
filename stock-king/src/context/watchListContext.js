@@ -8,7 +8,6 @@ export const WatchListContextProvider = (props) => {
    );
 
    
-
    useEffect(() => {
       localStorage.setItem("watchList", watchList);
    }, [watchList]);

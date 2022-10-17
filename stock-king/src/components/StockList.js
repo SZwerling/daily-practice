@@ -5,8 +5,6 @@ import finnHub from "../apis/finnHub"
 import { WatchListContext } from "../context/watchListContext"
 
 
-
-
 export const StockList = () => {
   const [stock, setStock] = useState([])
   const { watchList, deleteStock } = useContext(WatchListContext)
@@ -33,7 +31,7 @@ export const StockList = () => {
           })
         }))
 
-        console.log(responses)
+      
         const data = responses.map((response) => {
           return {
             data: response.data,
@@ -41,7 +39,7 @@ export const StockList = () => {
           }
 
         })
-        console.log(data)
+      
         if (isMounted) {
           setStock(data)
         }

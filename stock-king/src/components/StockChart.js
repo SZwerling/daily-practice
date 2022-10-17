@@ -2,11 +2,12 @@ import Chart from "react-apexcharts";
 import { useState } from "react";
 
 const StockChart = ({ chartData, symbol }) => {
-   const { day, week, year } = chartData;
-   const [dateFormat, setDateFormat] = useState(day);
+   // const { day, week, year } = chartData;
+   const [dateFormat, setDateFormat] = useState('day');
 
-   const color = dateFormat[dateFormat.length-1].y - dateFormat[0].y > 0 ? "#26C281" : "#ed3419"
-
+   const color = chartData[dateFormat][chartData[dateFormat].length-1].y - chartData[dateFormat][0].y > 0 ? "#26C281" : "#ed3419"
+   
+   
    const options = {
       colors: [color],
       title: {
@@ -38,13 +39,13 @@ const StockChart = ({ chartData, symbol }) => {
    const series = [
       {
          name: symbol,
-         data: dateFormat,
+         data: chartData[dateFormat]
       },
    ];
 
-   const renderButtonSelect = (button) => {
+   const renderButtonSelect = (selectTime) => {
     const classes = "btn m-1 "
-    if(button === dateFormat){
+    if(selectTime === dateFormat){
         return classes + "btn-primary"
     } else {
         return classes + "btn-outline-primary"
@@ -52,16 +53,14 @@ const StockChart = ({ chartData, symbol }) => {
    }
 
   
-   
-  
    return (
       
       <div className="mt-3 shadow-sm bg-white">
          <Chart options={options} series={series} type="area" height="450"  />
          <div>
-            <button className={renderButtonSelect(day)} onClick={() => setDateFormat(day)}>24hr</button>
-            <button className={renderButtonSelect(week)} onClick={() => setDateFormat(week)}>7d</button>
-            <button className={renderButtonSelect(year)} onClick={() => setDateFormat(year)}>1yr</button>
+            <button className={renderButtonSelect('day')} onClick={() => setDateFormat('day')}>24hr</button>
+            <button className={renderButtonSelect('week')} onClick={() => setDateFormat('week')}>7d</button>
+            <button className={renderButtonSelect('year')} onClick={() => setDateFormat('year')}>1yr</button>
          </div>
       </div>
    );
