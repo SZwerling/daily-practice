@@ -301,7 +301,7 @@ body {
 
 @media screen and (min-width: 1015px) {
   .favorite-container {
-    background-color: var(--grey-900);
+    background-color: var(--backgroundColor);
     display: flex;
     flex-direction: row;
     align-items: center;
